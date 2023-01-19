@@ -7,13 +7,17 @@
         apt:
           name: apt-transport-https
           state: present
+      - name: install gnupg
+        apt:
+          name: gnupg
+          state: present
       - name: Debian - Add Icinga 2 repository key
         apt_key:
           url: https://packages.icinga.com/icinga.key
           state: present
       - name: Debian - Add Icinga 2 repository
         apt_repository:
-          repo: "deb http://packages.icinga.com/{{ ansible_distribution|lower }} icinga-{{ ansible_distribution_release }} main"
+          repo: "deb http://packages.icinga.com/bullseye main"
           state: present
 
       - name: Debian - Ensure Icinga2 is installed
