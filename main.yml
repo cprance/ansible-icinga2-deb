@@ -1,5 +1,5 @@
 ---
-  - name: Debian - Install apt-transport-https
+  - name: Debian - Enable Icinga Repo and install Icinga 2 Agent
     hosts: all
     become: yes
     tasks:
@@ -19,7 +19,6 @@
         apt_repository:
           repo: "deb http://packages.icinga.com/bullseye main"
           state: present
-
       - name: Debian - Ensure Icinga2 is installed
         apt:
           name: icinga2
