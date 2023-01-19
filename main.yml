@@ -19,8 +19,17 @@
         apt_repository:
           repo: "deb https://packages.icinga.com/bullseye icinga-bullseye main"
           state: present
+      - name: Debian - Add Icinga 2 repository II
+        apt_repository:
+          repo: "deb-src https://packages.icinga.com/bullseye icinga-bullseye main"
+          state: present
+
       - name: Debian - Ensure Icinga2 is installed
         apt:
           name: icinga2
           state: present
-
+      - name: Start Icinga2
+        service:
+          name: icinga2
+          state: started
+          enabled: yes
