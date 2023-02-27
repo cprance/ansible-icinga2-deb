@@ -36,6 +36,12 @@
           update_cache: yes
           state: latest
 
+      - name: Debian - Install nagios-plugins
+        apt:
+          name: nagios-plugins
+          update_cache: yes
+          state: latest
+
       - name: Start Icinga2
         service:
           name: icinga2
