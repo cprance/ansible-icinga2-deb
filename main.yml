@@ -20,13 +20,13 @@
 
       - name: Debian - Add Icinga 2 repository
         apt_repository:
-          repo: "deb https://packages.icinga.com/debian icinga-bullseye main"
+          repo: "deb https://packages.icinga.com/debian icinga-bookworm main"
           update_cache: yes
           state: present
 
       - name: Debian - Add Icinga 2 repository II
         apt_repository:
-          repo: "deb-src https://packages.icinga.com/debian icinga-bullseye main"
+          repo: "deb-src https://packages.icinga.com/debian icinga-bookworm main"
           update_cache: yes
           state: present
 
